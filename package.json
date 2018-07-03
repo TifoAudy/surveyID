@@ -1,0 +1,18 @@
+{
+  "name": "survey.id",
+  "version": "1.0.0",
+  "description": "My first fullstack project",
+  "main": "index.js",
+  "engines": {
+    "node":"10.5.0",
+    "npm":"6.1.0"
+  },
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "author": "icecoding",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
