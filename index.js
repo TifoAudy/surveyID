@@ -19,7 +19,7 @@ app.use(
     maxAge: 30*24*60*60*1000,
     keys: [keys.cookie]
   })
-)
+);
 
 //tell pasport to use cookie
 app.use(passport.initialize());
