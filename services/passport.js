@@ -35,6 +35,7 @@ passport.use(
         .then((existingUser) => {
           if (existingUser) {
             //user already recorded
+            console.log(existingUser);
             done(null, existingUser);
           } else {
             //create model instance from model class
