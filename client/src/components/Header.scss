@@ -1,0 +1,24 @@
+.container {
+  display: block;
+
+  .header {
+    background-color: white;
+    box-shadow: 0 0 0 3px #91BED4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+
+    h2 {
+      color: #3498DB;
+      margin-left: 1em;
+    }
+
+    .btn {
+      color:#3498DB;
+    }
+  }
+
+
+
+}
