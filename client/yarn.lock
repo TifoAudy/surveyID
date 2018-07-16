@@ -1867,6 +1867,14 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
+css-hot-loader@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/css-hot-loader/-/css-hot-loader-1.4.0.tgz#170e8b4bf0708a9f5cfc289e8ee0c268ab9a41bb"
+  dependencies:
+    loader-utils "^1.1.0"
+    lodash "^4.17.5"
+    normalize-url "^1.9.1"
+
 css-loader@0.28.7:
   version "0.28.7"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.7.tgz#5f2ee989dd32edd907717f953317656160999c1b"
@@ -5111,7 +5119,7 @@ normalize-scroll-left@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-scroll-left/-/normalize-scroll-left-0.1.2.tgz#6b79691ba79eb5fb107fa5edfbdc06b55caee2aa"
 
-normalize-url@^1.4.0:
+normalize-url@^1.4.0, normalize-url@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-1.9.1.tgz#2cc0d66b31ea23036458436e3620d85954c66c3c"
   dependencies:
