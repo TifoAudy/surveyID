@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from './pages/Home';
 import { connect } from 'react-redux';
-import { fetchUser }from './action';
+import * as actions from './action';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
           </Dimmer>
         )
       default:
-        return <Home />
+        return <Home loggedIn = {auth?true:false} />
     }
   }
 
@@ -36,4 +36,4 @@ const mapStateToProps = ({ auth }) => {
   return { auth }
 }
 
-export default connect(mapStateToProps, { fetchUser })(App);
+export default connect(mapStateToProps, actions)(App);

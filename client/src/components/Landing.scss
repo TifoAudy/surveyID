@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75vh;
+
+  h1 {
+    font-size: 5.5em;
+    color: purple;
+    text-align: center;
+  }
+
+  p {
+    font-size: 2em;
+    text-align: center;
+    color: lightseagreen;
+    font-weight: 150;
+  }
+
+
+}

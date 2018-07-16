@@ -3,20 +3,20 @@ import { Menu, Button, Icon } from 'semantic-ui-react';
 import styles from './Header.scss';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 
 class Header extends Component {
-
   renderContent() {
     const { user } = this.props;
-
     if (user) {
       return (
         <div>
-          <Button primary>
-            Credits
+          <Payments />
+          <Button primary style={{marginLeft: 10}}>
+            {`Current Credits : ${user.credit}`}
           </Button>
-          <a href="/api/logout">
+          <a href="/api/logout" className={styles.payment}>
             <Button primary basic>
               Logout
             </Button>
@@ -43,7 +43,7 @@ class Header extends Component {
           <Link to={this.props.user ? "/surveys":"/"}>
             <h2>SURVEY.ID</h2>
           </Link>
-          <Menu.Menu position='right'>
+          <Menu.Menu position='right' className={styles.menu}>
             {this.renderContent()}
           </Menu.Menu>
         </Menu>

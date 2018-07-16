@@ -1,8 +1,10 @@
 //initial express app and some library
 const express = require('express');
 const authRoutes = require('./routes/auth');
+const billingRoutes = require('./routes/billing');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const bodyParser = require('body-parser');
 const passport = require('passport');
 const keys = require('./config/keys');
 require('./models/user');
@@ -13,6 +15,8 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+
+app.use(bodyParser.json());
 //enable cookie
 app.use(
   cookieSession({
@@ -28,6 +32,19 @@ app.use(passport.session());
 
 //Google OAuth routes
 authRoutes(app);
+billingRoutes(app);
+
+if (process.env.NODE_ENV === 'production') {
+  //some request looking for production assets
+  app.use(express.static('client/build'));
+
+  //some request that tell express to serve up the html file
+  const path = require('path');
+  app.get('*', (req,res)=> {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+
+};
 
 
 //process.env.PORT = used for production
