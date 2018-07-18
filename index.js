@@ -1,13 +1,12 @@
 //initial express app and some library
 const express = require('express');
-const authRoutes = require('./routes/auth');
-const billingRoutes = require('./routes/billing');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const keys = require('./config/keys');
 require('./models/user');
+require('./models/Survey');
 require('./services/passport');
 
 //connect to mongoDb
@@ -31,8 +30,9 @@ app.use(passport.session());
 
 
 //Google OAuth routes
-authRoutes(app);
-billingRoutes(app);
+require('./routes/auth')(app);
+require('./routes/billing')(app);
+require('./routes/survey')(app);
 
 if (process.env.NODE_ENV === 'production') {
   //some request looking for production assets
